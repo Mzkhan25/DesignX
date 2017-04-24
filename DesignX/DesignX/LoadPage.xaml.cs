@@ -117,6 +117,8 @@ namespace DesignX
                 else
                 {
                     await DisplayAlert("Alert", "Invalid Pin", "OK");
+                    UserPin.Text = "                            ";
+                    Grid.SetColumnSpan(UserPin,4);
                     WelcomeScreen.IsVisible = true;
                     LoginButton.IsVisible = true;
                     UserPin.IsVisible = true;

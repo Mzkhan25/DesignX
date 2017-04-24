@@ -16,6 +16,8 @@
     <Compile Include="$(MSBuildThisFileDirectory)Classes\CardStackView.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Classes\CardView.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Classes\CircularProgressControl.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Classes\DoubleExtensions.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Classes\PinchToZoomContainer.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)FinishPage.xaml.cs">
       <DependentUpon>FinishPage.xaml</DependentUpon>
       <SubType>Code</SubType>

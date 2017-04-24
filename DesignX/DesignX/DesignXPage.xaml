@@ -4,8 +4,10 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:classes="clr-namespace:DesignX.Classes"
              x:Class="DesignX.DesignXPage">
-    <RelativeLayout x:Name="view" >
-
-        <classes:CircularProgressControl x:Name="ProgressControl" Progress="0" HorizontalOptions="Center" VerticalOptions="Center" />
-    </RelativeLayout>
+    <classes:PinchToZoomContainer>     
+        <RelativeLayout x:Name="view" >
+            <classes:CircularProgressControl x:Name="ProgressControl" Progress="0" HorizontalOptions="Center" VerticalOptions="Center" />
+        </RelativeLayout>
+    </classes:PinchToZoomContainer>
+   
 </ContentPage>
