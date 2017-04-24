@@ -73,9 +73,10 @@ namespace DesignX
         {
             try
             {
-                                               
-                string result = "";
-                if (InformationClass.Dict.Count == 1)
+				string result = "";
+				if (InformationClass.Dict.Count == 0)
+                    InformationClass.Dict.TryGetValue(index , out result);
+                else if (InformationClass.Dict.Count == 1)
                     InformationClass.Dict.TryGetValue(index - 1, out result);
                 else
                     InformationClass.Dict.TryGetValue(index - 2, out result);
@@ -105,7 +106,7 @@ namespace DesignX
             }
             catch (Exception ex)
             {
-
+				await DisplayAlert("Alert", "Unable to cast vote. Kindly restart the application and try again", "OK");
             }
         }
 
@@ -114,7 +115,9 @@ namespace DesignX
             try
             {                                                 
                 string result = "";
-                if (InformationClass.Dict.Count == 1)
+				if (InformationClass.Dict.Count == 0)
+                    InformationClass.Dict.TryGetValue(index , out result);
+                else if (InformationClass.Dict.Count == 1)
                     InformationClass.Dict.TryGetValue(index - 1, out result);
                 else
                     InformationClass.Dict.TryGetValue(index - 2, out result);
@@ -135,7 +138,7 @@ namespace DesignX
                     };
                     await MobileService.GetTable<ImageTable>().InsertAsync(image);
                     countCheck++;
-                    if (countCheck == AzureResult.Count)
+                    if (countCheck == AzureResult.Count ||InformationClass.Dict.Count <1)
                         Application.Current.MainPage = new NavigationPage(new FinishPage());
                 }
 
@@ -145,7 +148,7 @@ namespace DesignX
             }
             catch (Exception ex)
             {
-
+				await DisplayAlert("Alert", "Unable to cast vote. Kindly restart the application and try again", "OK");
             }
 
         }

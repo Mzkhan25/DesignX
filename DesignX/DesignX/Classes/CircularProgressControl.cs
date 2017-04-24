@@ -24,8 +24,15 @@ namespace DesignX.Classes
 
         public double Progress
         {
-            get => (double) GetValue(ProgressProperty);
-            set => SetValue(ProgressProperty, value);
+            get
+			{
+				return (double) GetValue(ProgressProperty);
+				
+			}
+            set
+			{
+				SetValue(ProgressProperty, value);
+			}
         }
 
         private View CreateImage(string v1)

@@ -99,6 +99,7 @@ namespace DesignX
             if (string.IsNullOrWhiteSpace(pin))
             {
                 await DisplayAlert("Alert", "Kindly Enter Pin", "OK");
+				UserPin.Text = "Enter Your Pin";
                 WelcomeScreen.IsVisible = true;
                 LoginButton.IsVisible = true;
                 UserPin.IsVisible = true;

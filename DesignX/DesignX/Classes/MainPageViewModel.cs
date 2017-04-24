@@ -51,7 +51,10 @@ namespace DesignX.Classes
 
         public List<CardStackView.Item> ItemsList
         {
-            get => _items;
+            get
+			{
+				return _items;
+			}
             set
             {
                 if (_items == value)

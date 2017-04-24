@@ -64,7 +64,10 @@ namespace DesignX.Classes
 
         public List<Item> ItemsSource
         {
-            get => (List<Item>) GetValue(ItemsSourceProperty);
+			get 
+			{
+				return (List<Item>) GetValue(ItemsSourceProperty);
+			}
             set
             {
                 SetValue(ItemsSourceProperty, value);
