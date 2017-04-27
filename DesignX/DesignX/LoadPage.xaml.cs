@@ -53,6 +53,7 @@ namespace DesignX
             LoginButton.IsVisible = false;
             UserPin.IsVisible = false;
             ProgressControl.IsVisible = true;
+            DataLoadLabel.IsVisible = true;
             Login();
         }
         private async void UpdateTable()
@@ -104,6 +105,7 @@ namespace DesignX
                 LoginButton.IsVisible = true;
                 UserPin.IsVisible = true;
                 ProgressControl.IsVisible = false;
+                DataLoadLabel.IsVisible = false;
             }
             else
             {
@@ -123,6 +125,7 @@ namespace DesignX
                     LoginButton.IsVisible = true;
                     UserPin.IsVisible = true;
                     ProgressControl.IsVisible = false;
+                    DataLoadLabel.IsVisible = false;
                 }
             }
         }
@@ -171,9 +174,7 @@ namespace DesignX
             await MobileService.GetTable<User>().InsertAsync(user);
         }
         private async Task GetDataFromAzure()
-        {
-            //var user = await MobileService.GetTable<User>().Where(p => p.Password == pin).ToListAsync();
-            //AzureResult.userName = user[0].Name;
+        {             
             try
             {
                 var completed = false;
@@ -242,6 +243,7 @@ namespace DesignX
                 LoginButton.IsVisible = true;
                 UserPin.IsVisible = true;
                 ProgressControl.IsVisible = false;
+                DataLoadLabel.IsVisible = false;
             }
         }
         private void Navigate()

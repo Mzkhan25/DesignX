@@ -27,10 +27,9 @@
                HorizontalOptions="Center" Source="welcome_to_designX.png" />
         <Entry x:Name="UserPin" Grid.Column="0" Grid.ColumnSpan="4" HorizontalOptions="Center" Grid.Row="4"
                Text="Enter Your Pin" Focused="entryCheck_Focused" Unfocused="entryCheck_UnFocused" />
-        <classes:CircularProgressControl Grid.Row="0" Grid.RowSpan="8" x:Name="ProgressControl" Grid.Column="0"
-                                         Grid.ColumnSpan="4" VerticalOptions="Center" HorizontalOptions="Center"
-                                         IsVisible="false" />
         <Button Grid.Row="5" Grid.Column="0" Grid.ColumnSpan="4" HorizontalOptions="Center" x:Name="LoginButton"
                 Text="          Sign In           " TextColor="White" BackgroundColor="Navy" Clicked="Handle_Clicked" />
+        <classes:CircularProgressControl Grid.Row="0" Grid.RowSpan="8" x:Name="ProgressControl" Grid.Column="0" Grid.ColumnSpan="4" VerticalOptions="Center" HorizontalOptions="Center" IsVisible="false" />
+        <Label x:Name="DataLoadLabel" Text="Hold on, getting data from server" Grid.Row="0" Grid.RowSpan="2" FontSize="20" Grid.Column="0" Grid.ColumnSpan="4" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" IsVisible="False"/>
     </Grid>
 </ContentPage>
