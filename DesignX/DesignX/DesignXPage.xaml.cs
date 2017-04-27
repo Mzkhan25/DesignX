@@ -74,12 +74,17 @@ namespace DesignX
             try
             {
 				string result = "";
-				if (InformationClass.Dict.Count == 0)
-                    InformationClass.Dict.TryGetValue(index , out result);
-                else if (InformationClass.Dict.Count == 1)
-                    InformationClass.Dict.TryGetValue(index - 1, out result);
-                else
-                    InformationClass.Dict.TryGetValue(index - 2, out result);
+				if (InformationClass.Dict.Count == 1)
+				{
+					var _result = InformationClass.Dict.First();
+					result = _result.Value;
+				}
+				else 
+				{
+					InformationClass.Dict.TryGetValue(index-2 , out result);
+					InformationClass.Dict.Remove(index - 2);
+                
+				}
 
                 var item = await MobileService.GetTable<Project>().LookupAsync(result);
                 if (item==null)
@@ -113,14 +118,24 @@ namespace DesignX
         async void SwipedRight(int index)
         {
             try
-            {                                                 
-                string result = "";
-				if (InformationClass.Dict.Count == 0)
-                    InformationClass.Dict.TryGetValue(index , out result);
-                else if (InformationClass.Dict.Count == 1)
-                    InformationClass.Dict.TryGetValue(index - 1, out result);
-                else
-                    InformationClass.Dict.TryGetValue(index - 2, out result);
+            {        
+				string result = "";
+				if (InformationClass.Dict.Count == 1)
+				{
+					var _result = InformationClass.Dict.First();
+					result = _result.Value;
+				}
+				else 
+				{
+					InformationClass.Dict.TryGetValue(index-2 , out result);
+				InformationClass.Dict.Remove(index - 2);
+                
+				}
+
+
+
+
+				
 
                 var item = await MobileService.GetTable<Project>().LookupAsync(result);
                 if (item == null)
@@ -141,6 +156,7 @@ namespace DesignX
                     if (countCheck == AzureResult.Count ||InformationClass.Dict.Count <1)
                         Application.Current.MainPage = new NavigationPage(new FinishPage());
                 }
+
 
 
 
